@@ -5,9 +5,11 @@ import React, { useState } from 'react';
 
 export default function Home() {
   const [query, setQuery] = useState('');
+  const [responseText, setResponseText] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setResponseText('Thinking...')
 
     const formData = new FormData();
     formData.append('query', query);
@@ -20,6 +22,7 @@ export default function Home() {
     if (response.ok) {
       const responseData = await response.json();
       console.log(responseData);
+      setResponseText(responseData.response)
     } else {
       console.error('Failed to submit:', response.statusText);
     }
@@ -38,6 +41,9 @@ export default function Home() {
           />
           <button type="submit">Submit</button>
         </form>
+      </div>
+      <div>
+        {responseText}
       </div>
     </main>
   )

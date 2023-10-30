@@ -38,7 +38,7 @@ pydantic==2.4.2
 pydantic_core==2.10.1
 pymongo==4.5.0
 python-dateutil==2.8.2
-python-dotenv==1.0.0
+python-dotenv==0.21.1
 pytz==2023.3.post1
 PyYAML==6.0.1
 regex==2023.10.3

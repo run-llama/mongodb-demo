@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <h1>Sup.</h1>
+        <h1>Query my tweets</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -42,7 +42,7 @@ export default function Home() {
           <button type="submit">Submit</button>
         </form>
       </div>
-      <div>
+      <div className={styles.response}>
         {responseText}
       </div>
     </main>

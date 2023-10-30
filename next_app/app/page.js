@@ -45,6 +45,14 @@ export default function Home() {
       <div className={styles.response}>
         {responseText}
       </div>
+      <div className={styles.examples}>
+        <h2>Try some sample questions like...</h2>
+        <ul>
+          <li>What television shows does the author watch?</li>
+          <li>Does the author like dogs?</li>
+          <li>How does the author feel about web frameworks?</li>
+        </ul>
+      </div>
     </main>
   )
 }

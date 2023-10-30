@@ -6,11 +6,11 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-# This will turn on really noisy logging so you can be sure something is happening
-import logging
-import sys
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+# This will turn on really noisy logging if you want it, but it will slow things down
+# import logging
+# import sys
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+# logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
 import os
 from llama_index.readers.mongo import SimpleMongoReader
@@ -47,7 +47,8 @@ store = MongoDBAtlasVectorSearch(
 # now create an index from all the Documents and store them in Atlas
 storage_context = StorageContext.from_defaults(vector_store=store)
 index = VectorStoreIndex.from_documents(
-    documents, storage_context=storage_context
+    documents, storage_context=storage_context,
+    show_progress=True, # this will show you a progress bar as the embeddings are created
 )
 
 # you can't query your index yet because you need to create a vector search index in mongodb's UI now

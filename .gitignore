@@ -1,4 +1,4 @@
-flask_app/.venv
+.venv
 .env
 tweets.json
 fewertweets.json
